@@ -6,17 +6,18 @@ import japanize_matplotlib
 
 
 st.title('身近な統計 補助教材')
-st.header("t分布")
+st.header("F分布")
 
 st.write("""
 ### 自由度ν（>0）をスライドバーで入力してください。
 """)
 
-jiyuudo = st.slider('自由度ν：', 0.0, 100.0, 5.0)
+jiyuudo1 = st.slider('自由度ν1：', 0.0, 100.0, 2.0)
+jiyuudo2 = st.slider('自由度ν2：', 1.0, 100.0, 10.0)
 
 # グラフの描画
-x = np.arange(-4, 4, 0.01)
-y = stats.t.pdf(x, jiyuudo)
+x = np.arange(0, 5, 0.01)
+y = stats.f.pdf(x, jiyuudo1, jiyuudo2)
 
 fig, ax = plt.subplots()
 ax.plot(x, y)

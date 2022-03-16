@@ -15,7 +15,7 @@ st.write("""
 jiyuudo = st.slider('自由度ν：', 0.0, 100.0, 5.0)
 
 # グラフの描画
-x = np.arange(0, 16, 0.1)
+x = np.arange(0, 16, 0.01)
 y = stats.chi2.pdf(x, jiyuudo)
 
 fig, ax = plt.subplots()

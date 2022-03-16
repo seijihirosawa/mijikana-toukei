@@ -17,7 +17,7 @@ m = st.slider('平均μ：', -10.0, 10.0, 0.0)
 s = st.slider('標準偏差σ', 0.0, 10.0, 1.0)
 
 # グラフの描画
-x = np.arange(-4, 4, 0.1)
+x = np.arange(-4, 4, 0.01)
 y = norm.pdf(x, m, s)
 
 fig, ax = plt.subplots()

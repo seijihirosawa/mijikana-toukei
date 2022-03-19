@@ -8,7 +8,7 @@ import seaborn as sns
 from PIL import Image
 
 st.title('身近な統計 補助教材')
-st.header("2つのサイコロの和の確率分布実験")
+st.header("2つのサイコロの目の和の確率分布")
 
 st.write("""
 ### 試行回数を選択して、サイコロを振るをクリックしてください。

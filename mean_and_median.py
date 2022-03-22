@@ -26,7 +26,7 @@ def make_graph(num_array):
     mean_array = round(np.mean(st.session_state.num_array_int), 2)
     med_array = np.median(st.session_state.num_array_int)
     with placeholder2:
-        st.text('抽出された数字:'+str(st.session_state.num_array_int))
+        st.write('抽出された数字:'+str(st.session_state.num_array_int))
     with placeholder3:
         st.write('平均値：'+str(mean_array)+'　中央値：'+str(med_array))
     # グラフ描画
@@ -40,14 +40,14 @@ def make_graph(num_array):
         fig, ax = plt.subplots()
         ax.scatter(x, y)
         ax.set_ylim([0, 100])
-        ax.plot(x, med_line, color="green", label="中央値")
-        ax.plot(x, mean_line, color="red", label="平均値")
+        ax.plot(x, med_line, color="green", label="中央値", linestyle="dashed")
+        ax.plot(x, mean_line, color="red", label="平均値", linestyle="dashed")
         ax.legend(bbox_to_anchor=(1.05, 1), loc='upper left',
                   borderaxespad=0, fontsize=10)
         st.pyplot(fig)
 
 
-st.write("Step1:ボタンをクリックして数字をランダムに抽出してみよう！")
+st.write("Step1:ボタンをクリックして数字をランダムに抽出してみましょう。")
 placeholder1 = st.empty()
 st.markdown("#")
 st.markdown("#")
@@ -56,7 +56,7 @@ placeholder3 = st.empty()
 placeholder4 = st.empty()
 st.markdown("#")
 st.markdown("#")
-st.write("Step2:小さい値や大きい値を追加してみよう！")
+st.write("Step2:小さい値や大きい値を追加してみて、平均値と中央値がどのように変化するか確認してみましょう。")
 col1, col2 = st.columns(2)
 
 with placeholder1:

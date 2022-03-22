@@ -7,13 +7,19 @@ import japanize_matplotlib
 
 st.title('身近な統計 補助教材')
 st.header("二項分布")
+st.markdown("#")
 
-st.write("""
-### 成功確率p（0<p<1）と試行回数n（>0）をスライドバーで入力してください。
+st.markdown("""
+- 成功確率と試行回数をスライドバーで入力します。
+- 値を変更することで、分布がどのように変化するか確認してみましょう。
 """)
+st.markdown("#")
 
+
+st.write("Step1:成功確率pと試行回数nをスライドバーで入力します。")
 p = st.slider('成功確率p：', 0.0, 1.0, 0.5)
 n = st.slider("試行回数n：", 0, 170, 50)
+st.markdown("#")
 
 # グラフの描画
 x = np.arange(0, n, 1)

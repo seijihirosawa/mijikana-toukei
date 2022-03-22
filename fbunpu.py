@@ -7,11 +7,15 @@ import japanize_matplotlib
 
 st.title('身近な統計 補助教材')
 st.header("F分布")
+st.markdown("#")
 
-st.write("""
-### 自由度ν（>0）をスライドバーで入力してください。
+st.markdown("""
+- 自由度をスライドバーで入力します。
+- 値を変更することで、分布がどのように変化するか確認してみましょう。
 """)
+st.markdown("#")
 
+st.write("Step1:2つの自由度をスライドバーで入力します。")
 jiyuudo1 = st.slider('自由度ν1：', 0.0, 100.0, 2.0)
 jiyuudo2 = st.slider('自由度ν2：', 1.0, 100.0, 10.0)
 

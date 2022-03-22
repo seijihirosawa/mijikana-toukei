@@ -7,11 +7,16 @@ import japanize_matplotlib
 
 st.title('身近な統計 補助教材')
 st.header("ポアソン分布")
+st.markdown("#")
 
-st.write("""
-### 平均λ（>0）をスライドバーで入力してください。
+st.markdown("""
+- 平均をスライドバーで入力します。
+- 値を変更することで、分布がどのように変化するか確認してみましょう。
 """)
+st.markdown("#")
 
+
+st.write("Step1:平均λをスライドバーで入力します。")
 heikin = st.slider('平均λ：', 0.0, 15.0, 1.0)
 
 # グラフの描画

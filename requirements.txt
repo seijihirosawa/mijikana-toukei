@@ -3,5 +3,5 @@ scipy
 numpy
 japanize-matplotlib
 streamlit==1.4.0
-seaborn
-sklearn
+statsmodels
+pydse

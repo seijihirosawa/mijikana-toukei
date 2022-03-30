@@ -115,7 +115,8 @@ with col4:
     fig4 = plt.figure()
     ax4 = plt.axes()
     ax4.plot(df, label="オリジナルデータ")
-    ax4.plot(weighted_mean, linestyle="dashed", color="green", label="指数移動平均")
+    ax4.plot(exponential_mean, linestyle="dashed",
+             color="green", label="指数移動平均")
     ax4.set_xlabel('日付')
     ax4.set_ylabel('乗客者数')
     ax4.legend(loc='best')

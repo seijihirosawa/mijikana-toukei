@@ -12,15 +12,15 @@ st.set_page_config(layout="wide")
 # サイドバー画面
 
 st.sidebar.title('身近な統計 補助教材')
-st.sidebar.header("時系列分析ー自己回帰モデル（ARモデル）")
+st.sidebar.header("時系列分析ー自己回帰(AR)モデル")
 st.sidebar.markdown("#")
 st.sidebar.markdown("""
-#### Step1:ラグ数(n)をスライドバーで設定します。
+#### Step1:ラグ数(p)をスライドバーで設定します。
 """)
-n = st.sidebar.slider('ラグ数(n):', 1, 50, 5)
+p = st.sidebar.slider('ラグ数(p):', 1, 35, 5)
 st.sidebar.markdown("#")
 st.sidebar.markdown("""
-#### Step2:作成したモデルの結果を確認しましょう5
+#### Step2:作成したモデルの結果を確認しましょう。
 """)
 st.sidebar.markdown("#")
 st.sidebar.markdown("""
@@ -29,7 +29,7 @@ st.sidebar.markdown("""
 st.markdown("#")
 st.sidebar.markdown("#")
 st.sidebar.markdown("""
-#### Step4:ラグ数(n)の値を変更してみましょう。
+#### Step4:ラグ数(p)の値を変更してみましょう。
 """)
 st.markdown("#")
 
@@ -41,7 +41,7 @@ st.markdown("#")
 
 st.markdown("""
 #### - Box&Jenkins(1976)の1949年〜1960年の各月ごとの航空会社の乗客数データを使用してARモデルを作成してみましょう。
-#### - 自己回帰（AR）モデル：ラグ数(n)時点前の自身のデータを説明変数とした単回帰モデル
+#### - 自己回帰（AR）モデル：ラグ数(p)時点前の自身のデータを説明変数とした単回帰モデル
 """)
 st.markdown("#")
 st.markdown("#")
@@ -56,7 +56,7 @@ col5, col6 = st.columns(2)
 
 # データの読み込み
 df = data.airline_passengers()
-model = SARIMAX(df, order=(n, 0, 0))
+model = SARIMAX(df, order=(p, 0, 0))
 result = model.fit()
 
 # 残差の抽出
@@ -75,7 +75,7 @@ with col1:
 
 with col2:
     st.markdown("""
-    #### モデルの情報
+    #### 自己回帰モデルの情報
     """)
     st.write(result.summary())
 

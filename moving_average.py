@@ -23,9 +23,9 @@ def ema(Passengers, period):
     ema[:] = np.nan  # NaN で一旦初期化
     ema[period-1] = Passengers[:period].mean()  # 最初だけ単純移動平均で算出
 
-    for day in range(period, len(Passengers)):
-        ema[day] = ema[day-1] + \
-            (Passengers[day] - ema[day-1]) / (period + 1) * 2
+    for month in range(period, len(Passengers)):
+        ema[month] = ema[month-1] + \
+            (Passengers[month] - ema[month-1]) / (period + 1) * 2
     return ema
 
 
@@ -114,8 +114,8 @@ with col4:
     exponential_mean = ema(df["Passengers"], n).round(1)
     fig4 = plt.figure()
     ax4 = plt.axes()
-    ax4.plot(df, label="オリジナルデータ")
-    ax4.plot(exponential_mean, linestyle="dashed",
+    ax4.plot(df.reset_index()["Month"], df["Passengers"], label="オリジナルデータ")
+    ax4.plot(df.reset_index()["Month"], exponential_mean, linestyle="dashed",
              color="green", label="指数移動平均")
     ax4.set_xlabel('日付')
     ax4.set_ylabel('乗客者数')
